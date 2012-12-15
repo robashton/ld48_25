@@ -19,5 +19,5 @@ var server = http.createServer(function(req, res) {
       .on('directory', redirect)
       .pipe(res)
   
-}).listen(8000);
+}).listen(process.env.PORT || 8000);
 
