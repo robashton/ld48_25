@@ -2,6 +2,7 @@
   "name": "ld48-25",
   "version": "1.0.0",
   "dependencies": {
-    "paperboy": ""
+    "paperboy": "",
+    "express": "~3.0.4"
   }
 }
