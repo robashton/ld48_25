@@ -1,14 +1,9 @@
 var send = require('send')
 var http = require('http')
-var app = require('express')()
 var url = require('url')
 var path = require('path')
 
-var server = http.createServer(app).listen(8000);
-
-app.use(
-  function(req, res) {
-
+var server = http.createServer(function(req, res) {
     function error(err) {
       res.statusCode = err.status || 500
       res.end(err.message)
@@ -23,6 +18,6 @@ app.use(
       .on('error', error)
       .on('directory', redirect)
       .pipe(res)
-  }
-)
+  
+}).listen(8000);
 
