@@ -1,7 +1,7 @@
 {
-  "name": "ld4825robashton",
+  "name": "ld48-25",
   "version": "1.0.0",
   "dependencies": {
-    "send": "~0.1.0"
+    "paperboy": ""
   }
 }

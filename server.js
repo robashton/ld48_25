@@ -1,23 +1,18 @@
-var send = require('send')
-var http = require('http')
-var url = require('url')
-var path = require('path')
+var
+  path = require('path'),
+  http = require('http'),
+  paperboy = require('paperboy')
 
-var server = http.createServer(function(req, res) {
-    function error(err) {
-      res.statusCode = err.status || 500
-      res.end(err.message)
-    }
-    function redirect() {
-      res.statusCode = 301
-      res.setHeader('Location', req.url + '/')
-      res.end('Redirecting to ' + req.url + '/')
-    }
-    send(req, url.parse(req.url).pathname)
-      .root(__dirname)
-      .on('error', error)
-      .on('directory', redirect)
-      .pipe(res)
-  
-}).listen(process.env.PORT || 8000);
+  PORT = process.env.PORT  || 8000,
+  WEBROOT = path.dirname(__filename)
+
+http.createServer(function(req, res) {
+  var ip = req.connection.remoteAddress;
+  paperboy
+    .deliver(WEBROOT, req, res)
+    .otherwise(function(err) {
+      res.writeHead(404, {'Content-Type': 'text/plain'});
+      res.end("Error 404: File not found");
+    });
+}).listen(PORT);
 
