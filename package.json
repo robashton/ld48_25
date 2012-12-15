@@ -2,7 +2,7 @@
   "name": "ld4825robashton",
   "version": "1.0.0",
   "dependencies": {
-    "express": "",
-    "send": ""
+    "express": "~3.0.4",
+    "send": "~0.1.0"
   }
 }
