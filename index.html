@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Impact Game</title>
+	<title>Centipede 2013</title>
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"></script>
+  <link rel="stylesheet" href="/sprites.css"></script>
 	<style type="text/css">
+
 		html,body {
 			background-color: #333;
 			color: #fff;
@@ -22,11 +25,56 @@
 		}
 	</style>
 
+  <script type="text/javascript" src="/lib/jquery.js"></script>
   <script type="text/javascript" src="/lib/underscore-min.js"></script>
+  <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/lib/impact/impact.js"></script>
 	<script type="text/javascript" src="/lib/game/main.js"></script>
 </head>
 <body>
-	<canvas id="canvas"></canvas>
+  <div id="start">
+    <div class="container">
+      <h1>Centipede 2013</h1>
+      <h3>Exposition</h3>
+      <p>You are the villain, a pesky centipede found in the garden!</p>
+
+      <div class="centipede">
+        <div class="head"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+      </div>
+
+      <p>A villain you say? Why's that you say? Eating the flowers I say!</p>
+
+      <div class="flowers">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"</div>
+        <div class="four"></div>
+        <div class="five"></div>
+      </div>
+
+      <p>Thankfully the garden is protected by a noble defender who has his own agenda of destruction</p>
+
+      <div class="defender"></div>
+
+      <p>Avoid the bullets, collect the flowers - and be fast, or you'll be left with no stone left to hide behind</p>
+
+      <h3>Controls</h3>
+      <p>Arrow keys if you're on a PC</p>
+      <p>Swipe in a direction if you're on a mobile device</p>
+
+      <button class="btn btn-large btn-primary" id="start" type="button">Start</button> 
+      </div>
+    </div>
+  </div>
+  <div id="game">
+    <canvas id="canvas"></canvas>
+  </div>
+  <div id="gameover">
+
+  </div>
 </body>
 </html>
