@@ -70,11 +70,20 @@
       </div>
     </div>
   </div>
-  <div id="game">
+  <div id="game" style="display:none">
     <canvas id="canvas"></canvas>
   </div>
-  <div id="gameover">
-
+  <div id="gameover" style="display:none">
+    <div class="container">
+      <h1>Game over :(</h1>
+      <dl class="dl-horizontal">
+        <dt>Score</dt><dd id="final-score"></dd>
+        <dt>Flowers eaten</dt><dd id="total-flowers"></dd>
+        <dt>Rocks destroyed</dt><dd id="total-rocks"></dd>
+        <dt>Longest streak</dt><dd id="longest-streak"></dd>
+      </dl>
+      <button class="btn btn-large btn-primary" id="restart-button" type="button">Try again</button> 
+    </div>
   </div>
 </body>
 </html>
